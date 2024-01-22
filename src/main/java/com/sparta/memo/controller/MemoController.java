@@ -2,12 +2,11 @@ package com.sparta.memo.controller;
 
 import com.sparta.memo.dto.MemoRequestDto;
 import com.sparta.memo.dto.MemoResponseDto;
-import com.sparta.memo.repository.MemoRepository;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
-import service.MemoService;
+import com.sparta.memo.service.MemoService;
 
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/api")
