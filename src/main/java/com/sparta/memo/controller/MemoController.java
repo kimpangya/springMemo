@@ -12,13 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class MemoController {
-    private final MemoService memoService;
+        private final MemoService memoService;
 
-    //외부에서 jdbc객체 받아옴
-    //jdbc템플릿 사용가능
-    public MemoController(JdbcTemplate jdbcTemplate) {
-        this.memoService=new MemoService(jdbcTemplate);
-    }
+        //만들어진 memoService를 외부에서 넣어주면 되는거임
+        public MemoController(MemoService memoService) {
+            this.memoService=memoService;
+        }
 
     @PostMapping("/memos")
     public MemoResponseDto createMemo(@RequestBody MemoRequestDto requestDto) {
